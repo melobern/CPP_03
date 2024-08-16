@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:13:56 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/16 11:01:11 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/16 14:15:23 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 
 class ClapTrap {
  public:
-  ClapTrap(void);
-  explicit ClapTrap(const ClapTrap &num);
+  explicit ClapTrap(const std::string name);
+  explicit ClapTrap(const ClapTrap &claptrap);
   ~ClapTrap(void);
   ClapTrap &operator=(const ClapTrap &num);
   void   attack(const std::string& target);
