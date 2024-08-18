@@ -6,24 +6,25 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:16:27 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/18 11:44:14 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/18 12:44:49 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "../includes/ClapTrap.hpp"
 
-static void   loopAttack(ClapTrap& attacker, ClapTrap& victim, std::string name) {
+static void   loopAttack(ClapTrap *att, ClapTrap *def, std::string name) {
     for (int i = 0; i < 10; i ++) {
-        attacker.attack(name);
-        victim.takeDamage(attacker.getAttackDamage());
+        att->attack(name);
+        def->takeDamage(att->getAttackDamage());
+    }
 }
 
-static void   loopAttackRepair(ClapTrap& attacker, ClapTrap& victim, std::string name) {
+static void   loopAttackRepair(ClapTrap *att, ClapTrap *def, std::string name) {
     for (int i = 0; i < 10; i ++) {
-        attacker.attack(name);
-        victim.takeDamage(1);
-        victim.beRepaired(1);
+        att->attack(name);
+        def->takeDamage(1);
+        def->beRepaired(1);
     }
 }
 
@@ -34,10 +35,7 @@ int    main(void) {
     ClapTrap alex("Alex");
     ClapTrap clover("Clover");
 
-    for (int i = 0; i < 10; i ++) {
-        jim.attack("Bob");
-        bob.takeDamage(jim.getAttackDamage());
-    }
+    loopAttack(&jim, &bob, "Bob");
     jim.attack("Bob");
     jim2.attack("Jim");
     jim.takeDamage(jim2.getAttackDamage());
@@ -49,7 +47,7 @@ int    main(void) {
     jim.beRepaired(10);
     jim.takeDamage(1);
     jim.attack("Bob");
-    loopAttackRepair(alex, bob, "Bob");
-    loopAttackRepair(clover, bob, "Bob");
+    loopAttackRepair(&alex, &bob, "Bob");
+    loopAttackRepair(&clover, &bob, "Bob");
     return (0);
 }
