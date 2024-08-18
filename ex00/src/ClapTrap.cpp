@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:15:55 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/18 12:38:57 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/18 15:10:14 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,13 @@ ClapTrap   &ClapTrap::operator=(const ClapTrap &num) {
 }
 
 void   ClapTrap::attack(const std::string& target) {
-    if (this->_energyPoints > 0) {
+    int mana = this->_energyPoints;
+    int health = this->_hitPoints;
+
+    if (health <= 0) {
+        std::cout << "ClapTrap " << this->_name;
+        std::cout << " is dead. Dead claptraps can't attack!";
+    } else if (mana > 0) {
         std::cout << "ClapTrap " << this->_name;
         std::cout << " attacks ";
         std::cout << target;

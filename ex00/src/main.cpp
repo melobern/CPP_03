@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:16:27 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/18 12:44:49 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/18 15:09:47 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,6 @@ int    main(void) {
     jim.attack("Bob");
     loopAttackRepair(&alex, &bob, "Bob");
     loopAttackRepair(&clover, &bob, "Bob");
+    bob.attack("Jim");
     return (0);
 }
