@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:13:56 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/16 22:17:13 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/18 11:24:03 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 #define EX00_INCLUDES_CLAPTRAP_HPP_
 
 #include <iostream>
+#include <string>
 
 class ClapTrap {
  public:
+  ClapTrap(void);
   explicit ClapTrap(const std::string name);
   explicit ClapTrap(const ClapTrap &claptrap);
   ~ClapTrap(void);

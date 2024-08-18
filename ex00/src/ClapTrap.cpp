@@ -6,15 +6,22 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:15:55 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/16 23:09:54 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/18 11:27:23 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ClapTrap.hpp"
 
+ClapTrap::ClapTrap(void)
+    :_name("Anonymous"), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
+    std::cout << "Default constructor called" << std::endl;
+    return;
+}
+
 ClapTrap::ClapTrap(const std::string name)
     :_name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
-    std::cout << "Default constructor called" << std::endl;
+    std::cout << "ClapTrap " << name;
+    std::cout << " : constructor called" << std::endl;
     return;
 }
 
@@ -25,7 +32,8 @@ ClapTrap::ClapTrap(const ClapTrap &claptrap) {
 }
 
 ClapTrap::~ClapTrap() {
-    std::cout << "Destructor called" << std::endl;
+    std::cout << "ClapTrap " << this->_name;
+    std::cout <<" : Destructor called" << std::endl;
     return;
 }
 
@@ -74,25 +82,21 @@ void   ClapTrap::attack(const std::string& target) {
 void   ClapTrap::takeDamage(unsigned int amount) {
     unsigned int health = this->getHitPoints();
 
-    if (health > 0 && amount > 0 && amount < health) {
         std::cout << "ClapTrap " << this->_name;
+    if (health > 0 && amount > 0 && amount < health) {
         std::cout << " took ";
         std::cout << amount;
         std::cout << " points of damage!";
         this->_hitPoints-= amount;
     } else if (health > 0 && amount >= health) {
-        std::cout << "ClapTrap " << this->_name;
         std::cout << " took ";
         std::cout << amount;
-        std::cout << " points of damage and died!";
-        std::cout << " RIP ";
+        std::cout << " points of damage and died! RIP ";
         std::cout << this->_name;
         this->_hitPoints = 0;
     } else if (health <= 0) {
-        std::cout << "ClapTrap " << this->_name;
         std::cout << " can't take anymore damage. They're already dead!";
     } else {
-        std::cout << "ClapTrap " << this->_name;
         std::cout << " was attacked by a force ";
         std::cout << amount;
         std::cout << " attack, but it caused no harm !";
@@ -103,9 +107,9 @@ void   ClapTrap::takeDamage(unsigned int amount) {
 void   ClapTrap::beRepaired(unsigned int amount) {
     unsigned int health = this->getHitPoints();
     int mana = this->getEnergyPoints();
-    
+
     std::cout << "ClapTrap " << this->_name;
-    if (health <= 0){
+    if (health <= 0) {
         std::cout << " is dead. You can't resurrect the deads :'(";
     } else if (health < 10 && mana > 0) {
         std::cout << " is getting repaired for ";
@@ -118,9 +122,10 @@ void   ClapTrap::beRepaired(unsigned int amount) {
         }
         std::cout << " points!";
         this->_energyPoints--;
-    } else if (health >= 10) {
+    } else if (health >= 10 && mana > 0) {
         std::cout << " tried to heal, but their health is already at max!";
-    } else if (mana <= 0 ){
+        this->_energyPoints--;
+    } else if (mana <= 0) {
         std::cout << " tried to heal, but they don't have any energy left!";
     }
     std::cout << std::endl;
