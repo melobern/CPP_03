@@ -6,15 +6,23 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:15:55 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/18 15:45:09 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/18 15:42:36 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <limits.h>
 #include "../includes/ClapTrap.hpp"
 
 ClapTrap::ClapTrap(void)
     :_name("Anonymous"), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
     std::cout << "Default constructor called" << std::endl;
+    return;
+}
+
+ClapTrap::ClapTrap(const std::string name, int health, int mana, int strength)
+    :_name(name), _hitPoints(health), _energyPoints(mana), _attackDamage(strength) {
+    std::cout << "ClapTrap " << name;
+    std::cout << " : constructor called" << std::endl;
     return;
 }
 
@@ -88,7 +96,7 @@ void   ClapTrap::attack(const std::string& target) {
 void   ClapTrap::takeDamage(unsigned int amount) {
     unsigned int health = this->getHitPoints();
 
-    std::cout << "ClapTrap " << this->_name;
+    std::cout << this->_name;
     if (health > 0 && amount > 0 && amount < health) {
         std::cout << " took ";
         std::cout << amount;
@@ -114,10 +122,10 @@ void   ClapTrap::beRepaired(unsigned int amount) {
     unsigned int health = this->getHitPoints();
     int mana = this->getEnergyPoints();
 
-    std::cout << "ClapTrap " << this->_name;
+    std::cout << this->_name;
     if (health <= 0) {
         std::cout << " is dead. You can't resurrect the deads :'(";
-    } else if (health < 10 && mana > 0) {
+    } else if (health < INT_MAX && mana > 0) {
         std::cout << " is getting repaired for ";
         if (amount + health <= INT_MAX) {
             std::cout << amount;
@@ -127,9 +135,6 @@ void   ClapTrap::beRepaired(unsigned int amount) {
             this->_hitPoints = 10;
         }
         std::cout << " points!";
-        this->_energyPoints--;
-    } else if (health == INT_MAX && mana > 0) {
-        std::cout << " tried to heal, but their health is already at max!";
         this->_energyPoints--;
     } else if (mana <= 0) {
         std::cout << " tried to heal, but they don't have any energy left!";
