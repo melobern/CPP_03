@@ -6,14 +6,28 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:16:27 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/16 23:14:49 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/18 11:44:14 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include "../includes/ClapTrap.hpp"
 
-int main(void) {
+static void   loopAttack(ClapTrap& attacker, ClapTrap& victim, std::string name) {
+    for (int i = 0; i < 10; i ++) {
+        attacker.attack(name);
+        victim.takeDamage(attacker.getAttackDamage());
+}
+
+static void   loopAttackRepair(ClapTrap& attacker, ClapTrap& victim, std::string name) {
+    for (int i = 0; i < 10; i ++) {
+        attacker.attack(name);
+        victim.takeDamage(1);
+        victim.beRepaired(1);
+    }
+}
+
+int    main(void) {
     ClapTrap jim("Jim");
     ClapTrap bob("Bob");
     ClapTrap jim2(jim);
@@ -35,15 +49,7 @@ int main(void) {
     jim.beRepaired(10);
     jim.takeDamage(1);
     jim.attack("Bob");
-    for (int i = 0; i < 10; i ++) {
-        alex.attack("Bob");
-        bob.takeDamage(1);
-        bob.beRepaired(1);
-    }
-    for (int i = 0; i < 10; i ++) {
-        clover.attack("Bob");
-        bob.takeDamage(1);
-        bob.beRepaired(1);
-    }
+    loopAttackRepair(alex, bob, "Bob");
+    loopAttackRepair(clover, bob, "Bob");
     return (0);
 }
