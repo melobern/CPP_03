@@ -6,12 +6,12 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:13:56 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/18 14:45:00 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/19 14:22:23 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EX01_INCLUDES_CLAPTRAP_HPP_
-#define EX01_INCLUDES_CLAPTRAP_HPP_
+#ifndef EX03_INCLUDES_CLAPTRAP_HPP_
+#define EX03_INCLUDES_CLAPTRAP_HPP_
 
 #include <iostream>
 #include <string>
@@ -38,4 +38,4 @@ class ClapTrap {
     int         _energyPoints;
     int         _attackDamage;
 };
-#endif //  EX01_INCLUDES_CLAPTRAP_HPP_
+#endif  //  EX03_INCLUDES_CLAPTRAP_HPP_

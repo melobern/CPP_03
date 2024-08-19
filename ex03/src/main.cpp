@@ -6,16 +6,13 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:16:27 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/18 18:00:22 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/19 14:18:52 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "../includes/ClapTrap.hpp"
-#include "../includes/ScavTrap.hpp"
-#include "../includes/FragTrap.hpp"
+#include "../includes/DiamondTrap.hpp"
 
-static void  LoopAttack(FragTrap *att, FragTrap *def, std::string name) {
+static void  LoopAttack(DiamondTrap *att, DiamondTrap *def, std::string name) {
     for (int i = 0; i < 10; i ++) {
         att->attack(name);
         if (att->getHitPoints() > 0)
@@ -25,11 +22,12 @@ static void  LoopAttack(FragTrap *att, FragTrap *def, std::string name) {
 }
 
 int    main(void) {
-    FragTrap jim("Jim");
-    FragTrap bob("Bob");
+    DiamondTrap sam("sam");
+    DiamondTrap mandy("Mandy");
 
-    jim.highFivesGuys();
-    LoopAttack(&jim, &bob, "Bob");
-    bob.highFivesGuys();
+    LoopAttack(&sam, &mandy, "Mandy");
+    sam.highFivesGuys();
+    sam.guardGate();
+    sam.whoAmI();
     return (0);
 }
