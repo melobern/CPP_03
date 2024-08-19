@@ -6,13 +6,12 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 11:03:07 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/19 14:56:01 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/19 15:24:27 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/DiamondTrap.hpp"
-#define RED "\033[31m"
-#define YELLOW "\033[33m"
+
 #define BLUE "\033[94m"
 #define RESET "\033[0m"
 
@@ -42,7 +41,7 @@ DiamondTrap::DiamondTrap(const DiamondTrap &diamondtrap)
     return;
 }
 
-DiamondTrap::~DiamondTrap() {
+DiamondTrap::~DiamondTrap(void) {
     std::cout << BLUE << "💎  DiamondTrap " << this->_name << " : ";
     std::cout <<"Destructor called" << RESET << std::endl;
     return;

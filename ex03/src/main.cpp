@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:16:27 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/19 15:13:55 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/19 15:24:48 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ int    main(void) {
 
     LoopAttack(&sam, &mandy, "Mandy");
     sam.highFivesGuys();
+    mandy.highFivesGuys();
     sam.guardGate();
+    mandy.guardGate();
     sam.whoAmI();
     return (0);
 }
