@@ -6,18 +6,18 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:16:27 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/19 14:50:18 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/19 15:13:55 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/DiamondTrap.hpp"
 
 static void  LoopAttack(DiamondTrap *att, DiamondTrap *def, std::string name) {
-    for (int i = 0; i < 10; i ++) {
+    for (int i = 0; i < 5; i ++) {
         att->attack(name);
         if (att->getHitPoints() > 0)
             def->takeDamage(att->getAttackDamage());
-        def->beRepaired(1);
+        def->beRepaired(3);
     }
 }
 

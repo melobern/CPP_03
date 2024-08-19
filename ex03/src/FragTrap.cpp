@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 14:56:19 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/19 14:20:01 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/19 15:05:27 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,33 +18,33 @@
 
 FragTrap::FragTrap(void)
     :ClapTrap("Anonymous", 100, 100, 30) {
-    std::cout << BLUE << "⚔️   FragTrap Anonymous :";
-    std::cout << "Default constructor called" << RESET << std::endl;
+    std::cout << "⚔️  FragTrap :";
+    std::cout << "Default constructor called" << std::endl;
     return;
 }
 
 FragTrap::FragTrap(const std::string name)
     :ClapTrap(name, 100, 100, 30) {
-    std::cout << BLUE "⚔️   FragTrap " << name << " : ";
-    std::cout << "constructor called" << RESET << std::endl;
+    std::cout << "⚔️  FragTrap " << name << " : ";
+    std::cout << "constructor called" << std::endl;
     return;
 }
 
 FragTrap::FragTrap(const FragTrap &scavtrap) {
-    std::cout << "⚔️   FragTrap : ";
+    std::cout << "⚔️  FragTrap : ";
     std::cout << "Copy constructor called" << std::endl;
     *this = scavtrap;
     return;
 }
 
 FragTrap::~FragTrap() {
-    std::cout << "⚔️   FragTrap " << this->_name << " : ";
+    std::cout << "⚔️  FragTrap " << this->_name << " : ";
     std::cout <<"Destructor called" << std::endl;
     return;
 }
 
 FragTrap   &FragTrap::operator=(const FragTrap &scavtrap) {
-    std::cout << "⚔️   Copy assignment operator called" << std::endl;
+    std::cout << "⚔️  Copy assignment operator called" << std::endl;
     if (this != &scavtrap) {
         this->_name = scavtrap.getName();
         this->_hitPoints = scavtrap.getHitPoints();
