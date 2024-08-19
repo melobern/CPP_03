@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:16:27 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/19 14:18:52 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/19 14:50:18 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void  LoopAttack(DiamondTrap *att, DiamondTrap *def, std::string name) {
 }
 
 int    main(void) {
-    DiamondTrap sam("sam");
+    DiamondTrap sam("Sam");
     DiamondTrap mandy("Mandy");
 
     LoopAttack(&sam, &mandy, "Mandy");
