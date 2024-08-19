@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:13:56 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/18 14:45:00 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/19 14:30:17 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,4 @@ class ClapTrap {
     int         _energyPoints;
     int         _attackDamage;
 };
-#endif //  EX01_INCLUDES_CLAPTRAP_HPP_
+#endif  //  EX01_INCLUDES_CLAPTRAP_HPP_

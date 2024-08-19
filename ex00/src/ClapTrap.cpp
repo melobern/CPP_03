@@ -6,11 +6,12 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:15:55 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/18 15:45:09 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/19 14:33:30 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ClapTrap.hpp"
+#include <climits>
 
 ClapTrap::ClapTrap(void)
     :_name("Anonymous"), _hitPoints(10), _energyPoints(10), _attackDamage(0) {

@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:15:55 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/18 15:42:36 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/19 14:30:44 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ ClapTrap::ClapTrap(void)
 }
 
 ClapTrap::ClapTrap(const std::string name, int health, int mana, int strength)
-    :_name(name), _hitPoints(health), _energyPoints(mana), _attackDamage(strength) {
+    :_name(name),
+     _hitPoints(health), _energyPoints(mana), _attackDamage(strength) {
     std::cout << "ClapTrap " << name;
     std::cout << " : constructor called" << std::endl;
     return;

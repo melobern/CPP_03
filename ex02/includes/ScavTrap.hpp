@@ -6,12 +6,12 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 11:24:03 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/18 14:56:19 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/19 14:26:52 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EX01_INCLUDES_SCAVTRAP_HPP_
-#define EX01_INCLUDES_SCAVTRAP_HPP_
+#ifndef EX02_INCLUDES_SCAVTRAP_HPP_
+#define EX02_INCLUDES_SCAVTRAP_HPP_
 
 #include <iostream>
 #include <string>
@@ -27,4 +27,4 @@ class ScavTrap : public ClapTrap {
   void guardGate(void);
   void   attack(const std::string& target);
 };
-#endif  // EX01_INCLUDES_SCAVTRAP_HPP_
+#endif  // EX02_INCLUDES_SCAVTRAP_HPP_
