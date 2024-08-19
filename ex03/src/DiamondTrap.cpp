@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 11:03:07 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/19 14:06:55 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/19 14:56:01 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@
 #define RESET "\033[0m"
 
 DiamondTrap::DiamondTrap(void) {
-//    :ClapTrap("Anonymous_clap_name"),
- //    ScavTrap("Anonymous"), FragTrap("Anonymous") {
     std::cout << BLUE << "💎  DiamondTrap Anonymous :";
     std::cout << "Default constructor called" << RESET << std::endl;
     return;

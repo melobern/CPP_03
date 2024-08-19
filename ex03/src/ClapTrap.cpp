@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:15:55 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/19 14:17:56 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/19 15:08:18 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ ClapTrap::ClapTrap(void)
 ClapTrap::ClapTrap(const std::string name, int health, int mana, int strength)
     :_name(name),
      _hitPoints(health), _energyPoints(mana), _attackDamage(strength) {
-    std::cout << "ClapTrap " << name;
-    std::cout << " : constructor called" << std::endl;
+    std::cout << "ClapTrap : constructor called" << std::endl;
     return;
 }
 
@@ -107,7 +106,7 @@ void   ClapTrap::takeDamage(unsigned int amount) {
         std::cout << " took ";
         std::cout << amount;
         std::cout << " points of damage and died! RIP ";
-        std::cout << this->_name;
+        std::cout << this->_name << " ✝️";
         this->_hitPoints = 0;
     } else if (health <= 0) {
         std::cout << " can't take anymore damage. They're already dead!";
@@ -125,7 +124,7 @@ void   ClapTrap::beRepaired(unsigned int amount) {
 
     std::cout << this->_name;
     if (health <= 0) {
-        std::cout << " is dead. You can't resurrect the deads :'(";
+        std::cout << " is dead. You can't resurrect the deads 😢";
     } else if (health < INT_MAX && mana > 0) {
         std::cout << " is getting repaired for ";
         if (amount + health <= INT_MAX) {
