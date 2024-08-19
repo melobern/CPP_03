@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/18 11:24:03 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/18 15:25:26 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/19 14:28:38 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void   ScavTrap::attack(const std::string& target) {
     if (health <= 0) {
         std::cout << RED << "ScavTrap " << this->_name;
         std::cout << " is dead. They can't attack!" << RESET << " 💀";;
-    } if (mana > 0 && health > 0) {
+    } else if (mana > 0 && health > 0) {
         std::cout << "🗡️  " << RED << "ScavTrap " << this->_name;
         std::cout << " attacks ";
         std::cout << target;
@@ -80,8 +80,7 @@ void    ScavTrap::guardGate(void) {
     if (this->_hitPoints > 0) {
         std::cout << "🛡️  " << BLUE << "ScavTrap " << this->_name;
         std::cout << " entered guardgate mode " << RESET << "🛡️";
-    }
-    else {
+    } else {
         std::cout << "🛡️  " << BLUE << "ScavTrap " << this->_name;
         std::cout << " is dead. Corpses can't enter guardgate mode ";
         std::cout << RESET "💀";
