@@ -6,13 +6,13 @@
 #    By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/15 10:06:15 by mbernard          #+#    #+#              #
-#    Updated: 2024/08/19 13:44:07 by mbernard         ###   ########.fr        #
+#    Updated: 2024/08/19 14:48:24 by mbernard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 C = c++
 NAME = nowItsWeird
-CFLAGS = -Wall -Wextra -Werror -g3 -MMD -MP -Wshadow -Wno-shadow -std=c++98
+CFLAGS = -Wall -Wextra -Werror -MMD -MP -Wshadow -Wno-shadow -std=c++98
 MKDIR = mkdir -p
 RMDIR = rm -rf
 
