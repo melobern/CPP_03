@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/19 11:03:07 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/19 14:23:00 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/19 15:25:14 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class DiamondTrap : public ScavTrap, public FragTrap {
   explicit DiamondTrap(const DiamondTrap &diamontrap);
   ~DiamondTrap(void);
   DiamondTrap &operator=(const DiamondTrap &diamontrap);
-  void   whoAmI();
+  void   whoAmI(void);
   void   attack(const std::string& target);
  private:
   std::string _name;

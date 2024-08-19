@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:15:55 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/19 15:08:18 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/19 15:23:58 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ void   ClapTrap::takeDamage(unsigned int amount) {
         std::cout << " took ";
         std::cout << amount;
         std::cout << " points of damage!";
-        this->_hitPoints-= amount;
+        this->_hitPoints -= amount;
     } else if (health > 0 && amount >= health) {
         std::cout << " took ";
         std::cout << amount;
