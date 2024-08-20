@@ -6,12 +6,15 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:15:55 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/19 14:33:30 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/20 11:33:14 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ClapTrap.hpp"
 #include <climits>
+
+#define GREEN "\033[32m"
+#define RESET "\033[0m"
 
 ClapTrap::ClapTrap(void)
     :_name("Anonymous"), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
@@ -99,7 +102,7 @@ void   ClapTrap::takeDamage(unsigned int amount) {
         std::cout << " took ";
         std::cout << amount;
         std::cout << " points of damage and died! RIP ";
-        std::cout << this->_name;
+        std::cout << this->_name << " ✝️";
         this->_hitPoints = 0;
     } else if (health <= 0) {
         std::cout << " can't take anymore damage. They're already dead!";
@@ -118,16 +121,19 @@ void   ClapTrap::beRepaired(unsigned int amount) {
     std::cout << "ClapTrap " << this->_name;
     if (health <= 0) {
         std::cout << " is dead. You can't resurrect the deads :'(";
-    } else if (health < 10 && mana > 0) {
-        std::cout << " is getting repaired for ";
-        if (amount + health <= INT_MAX) {
+    } else if (health < INT_MAX && mana > 0) {
+        std::cout << GREEN << " is getting repaired for ";
+        if (amount < INT_MAX && amount + health <= INT_MAX) {
             std::cout << amount;
             this->_hitPoints += amount;
         } else {
             std::cout << (INT_MAX - health);
-            this->_hitPoints = 10;
+            this->_hitPoints = INT_MAX;
         }
         std::cout << " points!";
+        std::cout << " They now have ";
+        std::cout << this->_hitPoints;
+        std::cout << " health points! 💚" << RESET;
         this->_energyPoints--;
     } else if (health == INT_MAX && mana > 0) {
         std::cout << " tried to heal, but their health is already at max!";
