@@ -6,7 +6,7 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:15:55 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/20 11:33:14 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/20 11:30:42 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,13 @@
 ClapTrap::ClapTrap(void)
     :_name("Anonymous"), _hitPoints(10), _energyPoints(10), _attackDamage(0) {
     std::cout << "Default constructor called" << std::endl;
+    return;
+}
+
+ClapTrap::ClapTrap(const std::string name, int health, int mana, int strength)
+    :_name(name),
+     _hitPoints(health), _energyPoints(mana), _attackDamage(strength) {
+    std::cout << "ClapTrap : constructor called" << std::endl;
     return;
 }
 
@@ -92,12 +99,12 @@ void   ClapTrap::attack(const std::string& target) {
 void   ClapTrap::takeDamage(unsigned int amount) {
     unsigned int health = this->getHitPoints();
 
-    std::cout << "ClapTrap " << this->_name;
+    std::cout << this->_name;
     if (health > 0 && amount > 0 && amount < health) {
         std::cout << " took ";
         std::cout << amount;
         std::cout << " points of damage!";
-        this->_hitPoints-= amount;
+        this->_hitPoints -= amount;
     } else if (health > 0 && amount >= health) {
         std::cout << " took ";
         std::cout << amount;
@@ -133,7 +140,7 @@ void   ClapTrap::beRepaired(unsigned int amount) {
         std::cout << " points!";
         std::cout << " They now have ";
         std::cout << this->_hitPoints;
-        std::cout << " health points! 💚" << RESET;
+        std::cout << " health points!  💚" << RESET;
         this->_energyPoints--;
     } else if (health == INT_MAX && mana > 0) {
         std::cout << " tried to heal, but their health is already at max!";

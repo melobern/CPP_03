@@ -6,12 +6,12 @@
 /*   By: mbernard <mbernard@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/15 10:13:56 by mbernard          #+#    #+#             */
-/*   Updated: 2024/08/19 14:32:26 by mbernard         ###   ########.fr       */
+/*   Updated: 2024/08/19 14:30:17 by mbernard         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef EX00_INCLUDES_CLAPTRAP_HPP_
-#define EX00_INCLUDES_CLAPTRAP_HPP_
+#ifndef EX01_INCLUDES_CLAPTRAP_HPP_
+#define EX01_INCLUDES_CLAPTRAP_HPP_
 
 #include <iostream>
 #include <string>
@@ -21,19 +21,21 @@ class ClapTrap {
   ClapTrap(void);
   explicit ClapTrap(const std::string name);
   explicit ClapTrap(const ClapTrap &claptrap);
+  explicit ClapTrap(const std::string name,
+                     int health, int mana, int strength);
   ~ClapTrap(void);
   ClapTrap &operator=(const ClapTrap &num);
-  void   attack(const std::string& target);
+  virtual void   attack(const std::string& target);
   void   takeDamage(unsigned int amount);
   void   beRepaired(unsigned int amount);
   std::string getName(void) const;
   int    getHitPoints(void)const;
   int    getEnergyPoints(void)const;
   int    getAttackDamage(void)const;
- private:
+ protected:
     std::string _name;
     int         _hitPoints;
     int         _energyPoints;
     int         _attackDamage;
 };
-#endif  // EX00_INCLUDES_CLAPTRAP_HPP_
+#endif  //  EX01_INCLUDES_CLAPTRAP_HPP_
